@@ -1,7 +1,6 @@
-// eslint-disable-next-line camelcase
-import {get_encoding} from '@dqbd/tiktoken'
+import {get_encoding as getEncoding} from '@dqbd/tiktoken'
 
-const tokenizer = get_encoding('cl100k_base')
+const tokenizer = getEncoding('cl100k_base')
 
 export function encode(input: string): Uint32Array {
   return tokenizer.encode(input)

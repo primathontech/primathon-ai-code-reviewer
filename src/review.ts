@@ -1,6 +1,5 @@
 import {error, info, warning} from '@actions/core'
-// eslint-disable-next-line camelcase
-import {context as github_context} from '@actions/github'
+import {context as githubContext} from '@actions/github'
 import pLimit from 'p-limit'
 import {type Bot} from './bot'
 import {
@@ -18,11 +17,10 @@ import {type Options} from './options'
 import {type Prompts} from './prompts'
 import {getTokenCount} from './tokenizer'
 
-// eslint-disable-next-line camelcase
-const context = github_context
+const context = githubContext
 const repo = context.repo
 
-const ignoreKeyword = '@coderabbitai: ignore'
+const ignoreKeyword = '@primathontechai: ignore'
 
 export const codeReview = async (
   lightBot: Bot,
@@ -430,7 +428,7 @@ ${filename}: ${summary}
     if (releaseNotesResponse === '') {
       info('release notes: nothing obtained from openai')
     } else {
-      let message = '### Summary by CodeRabbit\n\n'
+      let message = '### Summary by Primathon\n\n'
       message += releaseNotesResponse
       try {
         await commenter.updateDescription(
@@ -461,11 +459,11 @@ ${SHORT_SUMMARY_END_TAG}
 ---
 
 <details>
-<summary>Uplevel your code reviews with CodeRabbit Pro</summary>
+<summary>Uplevel your code reviews with Primathon Pro</summary>
 
-### CodeRabbit Pro
+### Primathon Pro
 
-If you like this project, please support us by purchasing the [Pro version](https://coderabbit.ai). The Pro version has advanced context, superior noise reduction and several proprietary improvements compared to the open source version. Moreover, CodeRabbit Pro is free for open source projects.
+If you like this project, please support us by purchasing the [Pro version](https://primathon.in). The Pro version has advanced context, superior noise reduction and several proprietary improvements compared to the open source version. Moreover, Primathon Pro is free for open source projects.
 
 </details>
 `
@@ -723,16 +721,16 @@ ${
 <details>
 <summary>Tips</summary>
 
-### Chat with <img src="https://avatars.githubusercontent.com/in/347564?s=41&u=fad245b8b4c7254fe63dd4dcd4d662ace122757e&v=4" alt="Image description" width="20" height="20">  CodeRabbit Bot (\`@coderabbitai\`)
+### Chat with <img src="https://avatars.githubusercontent.com/u/135949086?s=41&u=9d633d9b9a7e72aa56bb997a6e8d231e73c3879a&v=4" alt="Image description" width="20" height="20">  Primathon Bot (\`@primathontechai\`)
 - Reply on review comments left by this bot to ask follow-up questions. A review comment is a comment on a diff or a file.
-- Invite the bot into a review comment chain by tagging \`@coderabbitai\` in a reply.
+- Invite the bot into a review comment chain by tagging \`@primathontechai\` in a reply.
 
 ### Code suggestions
 - The bot may make code suggestions, but please review them carefully before committing since the line number ranges may be misaligned. 
 - You can edit the comment made by the bot and manually tweak the suggestion if it is slightly off.
 
 ### Pausing incremental reviews
-- Add \`@coderabbitai: ignore\` anywhere in the PR description to pause further reviews from the bot.
+- Add \`@primathontechai: ignore\` anywhere in the PR description to pause further reviews from the bot.
 
 </details>
 `
