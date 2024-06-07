@@ -7,11 +7,11 @@
 
 `PrimathonAICodeReviewer` is an AI-driven GitHub Action that automates code
 reviewing and summarization for GitHub pull requests. Leveraging OpenAI's
-powerful `GPT-3.5 Turbo` and `GPT-4 models`, this tool provides detailed reviews
-and insightful summaries directly on your pull requests. Designed to integrate
-seamlessly with GitHub, `PrimathonAICodeReviewer` can be configured to activate
-on each pull request, enhancing your code quality by offering expert-level
-feedback and suggestions automatically.
+powerful `GPT-3.5 Turbo` and `GPT-4o models`, this tool provides detailed
+reviews and insightful summaries directly on your pull requests. Designed to
+integrate seamlessly with GitHub, `PrimathonAICodeReviewer` can be configured to
+activate on each pull request, enhancing your code quality by offering
+expert-level feedback and suggestions automatically.
 
 ## Reviewer Features:
 
@@ -27,7 +27,7 @@ feedback and suggestions automatically.
   pull request.
 - **"Light" model for summary**: Designed to be used with a "light"
   summarization model (e.g. `gpt-3.5-turbo`) and a "heavy" review model (e.g.
-  `gpt-4`). _For best results, use `gpt-4` as the "heavy" model, as thorough
+  `gpt-4o`). _For best results, use `gpt-4o` as the "heavy" model, as thorough
   code review needs strong reasoning abilities._
 - **Chat with bot**: Supports conversation with the bot in the context of lines
   of code or entire files, useful for providing context, generating test cases,
@@ -103,15 +103,15 @@ jobs:
   OpenAI API if you have multiple. Please add this key to your GitHub Action
   secrets.
 
-### Models: `gpt-4` and `gpt-3.5-turbo`
+### Models: `gpt-4o` and `gpt-3.5-turbo`
 
 Recommend using `gpt-3.5-turbo` for lighter tasks such as summarizing the
-changes (`openai_light_model` in configuration) and `gpt-4` for more complex
+changes (`openai_light_model` in configuration) and `gpt-4o` for more complex
 review and commenting tasks (`openai_heavy_model` in configuration).
 
-Costs: `gpt-3.5-turbo` is dirt cheap. `gpt-4` is orders of magnitude more
+Costs: `gpt-3.5-turbo` is dirt cheap. `gpt-4o` is orders of magnitude more
 expensive, but the results are vastly superior. We are typically spending $20 a
-day for a 20 developer team with `gpt-4` based review and commenting.
+day for a 20 developer team with `gpt-4o` based review and commenting.
 
 ### Prompts & Configuration
 
