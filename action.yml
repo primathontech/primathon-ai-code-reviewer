@@ -196,10 +196,10 @@ inputs:
       ### Code Documentation Guidelines
       - Include clear comments for complex logic.
 
-  project_type:
-    required: false
-    description: 'Type of project: react or angular'
-    default: 'react'
+  # project_type:
+  #   required: false
+  #   description: 'Type of project: react or angular'
+  #   default: 'react'
   system_message:
     required: false
     description: 'System message to be sent to OpenAI'
